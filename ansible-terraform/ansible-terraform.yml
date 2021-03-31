@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  gather_facts: false
+  connection: local
+  name: Create AWS EC2 with Terraforms
+  vars:
+    terraform_dir: /root/ansible-terraform/terraform_aws
+  tasks:
+    - name: Create AWS instances with Terraform - tfapply
+      terraform:
+         project_path: "{{ terraform_dir }}"
+         state: present
+      register: ec2
