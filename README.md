@@ -25,3 +25,8 @@ ansible-terraform --> ansible-terraform.yml
 Execute the ansible playbook 
 
 ansible-playbook ansible-terraform.yml -vvv
+
+ansible-playbook ansible-terraform.yml --extra-vars="terraform_dir=/home/terraform/" -vvv
+
+Note: pass the 'terraform_dir' variable vaule while executing the playbook or specify it in the group_vars
+
